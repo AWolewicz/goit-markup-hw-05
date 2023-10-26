@@ -12,6 +12,8 @@
     --grey-translucent: rgba(46, 47, 66, 0.7);
     --white: #FFFFFF;
     --dairy: #FCFCFC;
+    --duration-time: 250ms;
+    --animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -342,10 +344,6 @@
     column-gap: 24px;
     row-gap: 48px;
 }
-.portfolio-elements {
-    width: calc((100% - 48px) / 3);
-    background-color: var(--white);
-}
 
 .desc-portfolio-element {
     padding: 32px 16px;
@@ -487,3 +485,57 @@
     display:flex;
     align-items: baseline;
 }
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background-color: var(--dairy);
+    border-radius: 4px;
+    width: 408px;
+    height: 584px;
+    flex-shrink: 0;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.port-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.desc-wrapper {
+    position:absolute;
+    inset:0;
+    background-color: var(--iris);
+    color: var(--cloud);
+    opacity: 0;
+    translate: 0 100%;
+    transition-property: translate, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.desc-wrapper:hover { /* nie wiem czy w dobrym miejscu to jest podłączone */
+    opacity: 1;
+    translate: 0;
+}
+
+.portfolio-elements {
+    width: calc((100% - 48px) / 3);
+    background-color: var(--white);
+}
+
