@@ -64,6 +64,18 @@
     color: #434455;
     font-size: 16px;
     line-height: 1.5;
+    position: relative;
+}
+
+.navigation::after {
+    content:"";
+    position: absolute;
+    left:0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    transition: color 250ms var(--animation-function);
 }
 
 .filter-button {
@@ -78,6 +90,7 @@
     padding: 12px 24px;
     border: 1px solid #e7e9fc;
     border-radius: 4px;
+    transition: color 250ms var(--animation-function), background-color 250ms var(--animation-function), border-color 250ms var(--animation-function), box-shadow 250ms var(--animation-function);
 }
 
 .filter-button:hover,
@@ -99,11 +112,13 @@
     display:block;
     color: #2E2F42;
     text-decoration: none;
+    transition: box-shadow 250ms var(--animation-function);
 }
 
 .link-port:hover,
 .link-port:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(0, 0, 0, 0.08);
+    transform:translateY(0%);
 }
 
 .address-link {
@@ -111,6 +126,7 @@
     text-decoration: none;
     letter-spacing: 0.32px;
     line-height: 1.5;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -215,6 +231,7 @@
     border:none;
     border-radius:4px;
     justify-content: center;
+    transition: background-color 250ms var(--animation-function);
 }
 
 .btn:hover,
@@ -383,6 +400,7 @@
     background-color: var(--iris);
     border-radius:50%;
     gap: 24px;
+    transition: background-color 250ms var(--animation-function);
 }
 
 .foo-team-links {
@@ -395,6 +413,9 @@
     background-color: var(--iris);
     border-radius: 50%;
     gap: 24px;
+    transition-duration: 250ms;
+    transition-property: background-color;
+    transition-timing-function: var(--animation-function);
 }
 
 .foo-team-links:hover,
@@ -445,6 +466,9 @@
     align-items: center;
     justify-content: center;
     color: #8e8f99;
+    transition-duration: 250ms;
+    transition-property:color, border-color;
+    transition-timing-function: var(--animation-function);
 }
 
 .custom-link:hover,
@@ -455,7 +479,7 @@
 }
 
 .foo-container {
-    margin-right: 120px
+    margin-right: 120px;
 }
 
 .social-media {
@@ -495,21 +519,29 @@
 .backdrop {
     position: fixed;
     inset: 0 0 auto;
-    min-height: 100vh;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 1;
     pointer-events: all;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms var(--animation-function), visibility 250ms var(--animation-function);
 }
 
 .modal {
     background-color: var(--dairy);
     border-radius: 4px;
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     flex-shrink: 0;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--animation-function);
 }
 
 .port-wrapper {
@@ -519,19 +551,17 @@
 
 .desc-wrapper {
     position:absolute;
-    inset:0;
-    background-color: var(--iris);
-    color: var(--cloud);
-    opacity: 0;
-    translate: 0 100%;
-    transition-property: translate, opacity;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.desc-wrapper:hover { /* nie wiem czy w dobrym miejscu to jest podłączone */
-    opacity: 1;
-    translate: 0;
+    top:0;
+    font-size:16px;
+    line-height: 1.5;
+    letter-spacing: 0.02;
+    color:#f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms var(--animation-function);
 }
 
 .portfolio-elements {
@@ -542,11 +572,32 @@
 .icon-close {
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cornflower);
+    transition: fill 250ms var(--animation-function);
+}
+
+.icon-close:hover,
+.icon-close:focus {
+    fill: #ffffff;
 }
 
 .close-btn {
-    align-items: flex-end;
+    align-items: center;
+    position:absolute;
+    top:24px;
+    right:24px;
+    width:24px;
+    height: 24px;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    transition: background-color 250ms var(--animation-function), border 250ms var(--animation-function);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    background-color: #404bbf;
+    border: none;
 }
