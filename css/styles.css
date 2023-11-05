@@ -73,12 +73,14 @@
 }
 
 .link-activ::after {
+    display:block;
     content:"";
     position: absolute;
     left:0;
     bottom: -1px;
     height: 4px;
     color: #404bbf;
+    background-color: #404bbf;
     border-radius: 2px;
     width: 100%;
 }
