@@ -68,12 +68,14 @@
     transition: color 250ms var(--animation-function);
 }
 
-.link-activ {
-    display:none;
+.link-active {
     color: #404bbf;
+    text-decoration: none;
+    padding: 24px 0;
+    display: inline-block;
 }
 
-.link-activ::after {
+.link-active::after {
     display:block;
     content:"";
     position: absolute;
