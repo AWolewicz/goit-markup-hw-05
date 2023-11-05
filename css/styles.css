@@ -70,6 +70,7 @@
 
 .link-activ {
     display:none;
+    color: #404bbf;
 }
 
 .link-activ::after {
@@ -575,8 +576,6 @@
 }
 
 .icon-close {
-    width: 24px;
-    height: 24px;
     transition: fill 250ms var(--animation-function);
 }
 
@@ -588,9 +587,9 @@
 .close-btn {
     align-items: center;
     position:absolute;
-    top:24px;
-    right:24px;
-    width:24px;
+    top: 24px;
+    right: 24px;
+    width: 24px;
     height: 24px;
     border-radius: 50%;
     display:flex;
